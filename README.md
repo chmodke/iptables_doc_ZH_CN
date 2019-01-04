@@ -8,7 +8,7 @@
 
 ### 历史以及工作原理
 
-![](https://img-blog.csdn.net/20180327102245667?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4ODkyODgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](source/1.png)
 
 ### 1. iptables的发展:
 
@@ -40,7 +40,7 @@ iptables的前身叫ipfirewall （内核1.x时代）,这是一个作者从freeBS
 
 #### 数据流走向
 
-![](https://ooo.0o0.ooo/2016/09/10/57d3be21b6090.png)
+![](source/2.png)
 
 1. 一个数据包进入网卡时，它首先进入PREROUTING链，内核根据数据包目的IP判断是否需要转发出去。
 2. 如果数据包就是进入本机的，它就会沿着图向下移动，到达INPUT链。数据包到了INPUT链后，任何进程都会收到它。本机上运行的程序可以发送数据包，这些数据包会经 过OUTPUT链，然后到达POSTROUTING链输出。
@@ -124,8 +124,8 @@ iptables [-t 表] -命令 匹配   操作
 -o --out-interface   网络接口名>     指定数据包从哪个网络接口输出
 -p ---proto          协议类型        指定数据包匹配的协议，如TCP、UDP和ICMP等
 -s --source          源地址或子网>   指定数据包匹配的源地址
---sport           源端口号>       指定数据包匹配的源端口号
---dport           目的端口号>     指定数据包匹配的目的端口号
+   --sport           源端口号>       指定数据包匹配的源端口号
+   --dport           目的端口号>     指定数据包匹配的目的端口号
 -m --match           匹配的模块      指定数据包规则所使用的过滤模块
 ```
 
